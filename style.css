@@ -8,7 +8,7 @@ html {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Nunito', 'sans-serif';
+    font-family: 'Nunito', sans-serif;
 }
 
 body {
@@ -69,6 +69,7 @@ body {
     justify-content: space-between;
     height: 100vh;
     padding: 0 10%;
+    flex-wrap: wrap;
 }
 
 .about-content {
@@ -86,6 +87,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-right: 100px;
+    margin-bottom: 20px;
 }
 
 .profile-image img {
@@ -275,9 +277,89 @@ body {
     width: 100%;
 }
 
-/*KeyFrames Animation*/
+/* Keyframes Animation */
 @keyframes showRight {
     100% {
         width: 0;
+    }
+}
+
+/* Tablets & Small Laptops */
+@media screen and (max-width: 1024px) {
+    .profile-image {
+        width: 400px;
+        height: 400px;
+        margin-right: 50px;
+    }
+
+    .about-content h1 {
+        font-size: 48px;
+    }
+
+    .about-content h3 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 18px;
+    }
+}
+
+/* Landscape Phones & Tablets */
+@media screen and (max-width: 768px) {
+    .header {
+        padding: 15px 5%;
+    }
+
+    .navbar a {
+        margin-left: 20px;
+        font-size: 16px;
+    }
+
+    .about {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        height: auto; /* allow content to determine height */
+        padding: 120px 10% 40px;
+    }
+
+    .about-content {
+        margin: 0 0 30px;
+    }
+
+    .profile-image {
+        width: 300px;
+        height: 300px;
+        margin: 0 auto;
+    }
+}
+
+/* Small Phones */
+@media screen and (max-width: 480px) {
+    .logo {
+        font-size: 20px;
+    }
+
+    .navbar a {
+        font-size: 14px;
+        margin-left: 10px;
+    }
+
+    .about-content h1 {
+        font-size: 36px;
+    }
+
+    .about-content h3 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
+    .btn-box a {
+        width: 180px;
+        font-size: 16px;
     }
 }
