@@ -50,15 +50,39 @@
 <!--    <p>Projects..</p>-->
 <!--</section>-->
 
-<!--<section id="skills" class="skills">-->
-<!--    <h2>Skills</h2>-->
-<!--    <p>Skills..</p>-->
-<!--</section>-->
+<section id="skills" class="skills">
+    <h2>Skills</h2>
+    <div class="skills-container">
+        <div class="skill">
+            <i class='bx bxl-java' data-skill="Java"></i>
+        </div>
+        <div class="skill">
+            <i class='bx bxl-spring-boot' data-skill="Springboot"></i>
+        </div>
+        <div class="skill">
+            <i class='bx bxl-git' data-skill="Git"></i>
+        </div>
+        <div class="skill">
+            <i class='bx bxl-tux' data-skill="Linux"></i>
+        </div>
+    </div>
+</section>
 
 <!--<section id="message" class="message">-->
 <!--    <h2>Leave a Message</h2>-->
 <!--    <p>Leave a message..</p>-->
 <!--</section>-->
 </body>
+
+<script>
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
 
 </html>
