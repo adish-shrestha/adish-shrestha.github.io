@@ -14,6 +14,8 @@ html {
 body {
     background: #081b29;
     color: #ededed;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .header {
@@ -21,8 +23,8 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 20px 10%;
-    background: transparent;
+    padding: clamp(15px, 2vw, 20px) clamp(5%, 2vw, 10%);
+    background: #081b29;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,31 +32,18 @@ body {
 }
 
 .logo {
-    position: relative;
-    font-size: 25px;
+    font-size: clamp(1.25rem, 3vw, 1.5625rem);
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
 }
 
-.logo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: .4s;
-}
-
 .navbar a {
-    font-size: 18px;
+    font-size: clamp(0.875rem, 2vw, 1.125rem);
     color: #ededed;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: clamp(10px, 2vw, 35px);
     transition: .3s;
 }
 
@@ -65,28 +54,26 @@ body {
 
 .about {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    height: 100vh;
-    padding: 0 10%;
-    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(80px, 5vw, 100px) 10%;
 }
 
 .about-content {
-    max-width: 600px;
-    flex-grow: 1;
+    max-width: 100%;
+    margin-bottom: clamp(20px, 5vw, 30px);
 }
 
 .profile-image {
-    position: relative;
-    width: 500px;
-    height: 500px;
+    width: clamp(250px, 40vw, 500px);
+    height: clamp(250px, 40vw, 500px);
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 100px;
     margin-bottom: 20px;
 }
 
@@ -98,322 +85,266 @@ body {
 }
 
 .profile-image:hover img {
-    transform: scale(1.2);
+    transform: scale(1.1);
 }
 
 .about-content h1 {
-    position: relative;
-    font-size: 56px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 700;
-    line-height: 1.2;
-}
-
-.about-content h1::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1s;
 }
 
 .about-content h3 {
-    position: relative;
-    font-size: 32px;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
     font-weight: 700;
     color: #00abf0;
 }
 
-.about-content h3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.3s;
-}
-
 .about-content p {
-    position: relative;
-    font-size: 20px;
-    margin: 20px 0 40px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    margin: clamp(10px, 2vw, 20px) 0;
 }
 
-.about-content p::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.6s;
-}
-
-.about-content .btn-box {
-    position: relative;
+.btn-box {
     display: flex;
-    justify-content: space-between;
-    width: 345px;
-    height: 50px;
-    margin-top: 30px;
-}
-
-.about-content .btn-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 1.9s;
-    z-index: 2;
+    justify-content: center;
+    gap: clamp(5px, 2vw, 10px);
 }
 
 .btn-box a {
-    position: relative;
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 220px;
-    height: 100%;
+    width: clamp(140px, 40vw, 220px);
+    height: clamp(45px, 12vw, 50px);
     background: #00abf0;
     border: 2px solid #00abf0;
     border-radius: 8px;
-    font-size: 19px;
+    font-size: clamp(0.875rem, 2.5vw, 1.1875rem);
     color: #081b29;
     text-decoration: none;
     font-weight: 600;
-    letter-spacing: 1px;
-    z-index: 1;
-    overflow: hidden;
     transition: .5s;
 }
 
 .btn-box a:hover {
     color: #00abf0;
-}
-
-.btn-box a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #081b29;
-    z-index: -1;
-    transition: .5s;
-}
-
-.btn-box a:hover::before {
-    width: 100%;
+    background: transparent;
 }
 
 .about-social {
-    position: absolute;
-    bottom: 40px;
-    width: 170px;
     display: flex;
-    justify-content: space-between;
-}
-
-.about-social::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: 2.5s;
-    z-index: 2;
+    justify-content: center;
+    gap: clamp(10px, 2vw, 15px);
+    margin-top: clamp(10px, 2vw, 20px);
 }
 
 .about-social a {
-    position: relative;
     display: inline-flex;
-    width: 40px;
-    height: 40px;
+    justify-content: center;
+    align-items: center;
+    width: clamp(35px, 10vw, 40px);
+    height: clamp(35px, 10vw, 40px);
     background: transparent;
     border: 2px solid #00abf0;
     border-radius: 50%;
-    font-size: 20px;
+    font-size: clamp(1.125rem, 3vw, 1.25rem);
     color: #00abf0;
     text-decoration: none;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
     transition: .5s;
 }
 
 .about-social a:hover {
+    background: #00abf0;
     color: #081b29;
 }
 
-.about-social a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #00abf0;
-    z-index: -1;
-    transition: .5s;
-}
-
-.about-social a:hover::before {
-    width: 100%;
-}
-
-/* Keyframes Animation */
-@keyframes showRight {
-    100% {
-        width: 0;
-    }
-}
-
-/* Tablets & Small Laptops */
-@media screen and (max-width: 1024px) {
-    .profile-image {
-        width: 400px;
-        height: 400px;
-        margin-right: 50px;
-    }
-
-    .about-content h1 {
-        font-size: 48px;
-    }
-
-    .about-content h3 {
-        font-size: 28px;
-    }
-
-    .about-content p {
-        font-size: 18px;
-    }
-}
-
-.header.scrolled {
-    background-color: #081b29;
-    color: #ededed;
-}
-
 .skills {
-    padding: 50px 0;
-    background-color: #081b29;
+    padding: clamp(40px, 5vw, 50px) 0;
+    text-align: center;
 }
 
 .skills h2 {
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 30px;
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    margin-bottom: clamp(10px, 2vw, 20px);
 }
 
 .skills-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: clamp(10px, 2vw, 15px);
 }
 
 .skill {
-    width: 100px;
-    height: 100px;
+    width: clamp(70px, 15vw, 100px);
+    height: clamp(70px, 15vw, 100px);
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #081b29;
     border-radius: 5px;
     box-shadow: 0 2px 5px 0 #00abf0;
-    margin: 10px;
     transition: all 0.3s ease;
+    position: relative;
+}
+
+.skill:hover {
+    box-shadow: 0 4px 8px 0 #ededed;
 }
 
 .skill i {
-    font-size: 50px;
+    font-size: clamp(2.5rem, 6vw, 3.125rem);
     color: #00abf0;
     transition: all 0.3s ease;
 }
 
-.skill {
-    &:hover i {
-        transform: scale(1.3);
-        color: #ededed;
-    }
+.skill:hover i {
+    transform: scale(1.2);
+    color: #ededed;
 }
 
-.skill {
-    &:hover {
-        box-shadow: 0 4px 8px 0 #ededed;
-    }
+.tooltip {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%) translateY(5px);
+    color: #ededed;
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: clamp(0.75rem, 2vw, 0.75rem);
+    white-space: nowrap;
+    text-align: center;
+    max-width: 200px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+    z-index: 10;
+    pointer-events: none;
 }
 
-/* Landscape Phones & Tablets */
-@media screen and (max-width: 768px) {
-    .header {
-        padding: 15px 5%;
-    }
+.skill:hover .tooltip {
+    opacity: 1;
+    visibility: visible;
+}
 
-    .navbar a {
-        margin-left: 20px;
-        font-size: 16px;
-    }
-
+@media screen and (min-width: 768px) {
     .about {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        height: auto; /* allow content to determine height */
-        padding: 120px 10% 40px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: clamp(80px, 5vw, 100px) 10%;
     }
 
     .about-content {
-        margin: 0 0 30px;
+        max-width: 60%;
+        margin-bottom: 0;
     }
 
     .profile-image {
-        width: 300px;
-        height: 300px;
-        margin: 0 auto;
+        margin-right: clamp(20px, 5vw, 100px);
     }
-}
 
-/* Small Phones */
-@media screen and (max-width: 480px) {
-    .logo {
-        font-size: 20px;
+    .header {
+        padding: clamp(15px, 2vw, 20px) 10%;
     }
 
     .navbar a {
-        font-size: 14px;
-        margin-left: 10px;
+        margin-left: clamp(10px, 2vw, 35px);
+    }
+
+    .skill {
+        width: clamp(80px, 15vw, 100px);
+        height: clamp(80px, 15vw, 100px);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .about-content {
+        max-width: 600px;
     }
 
     .about-content h1 {
-        font-size: 36px;
+        font-size: clamp(3rem, 5vw, 3.5rem);
     }
 
     .about-content h3 {
-        font-size: 24px;
+        font-size: clamp(2rem, 3.5vw, 2rem);
     }
 
     .about-content p {
-        font-size: 16px;
+        font-size: clamp(1.25rem, 2.5vw, 1.25rem);
     }
 
     .btn-box a {
-        width: 180px;
-        font-size: 16px;
+        width: clamp(180px, 25vw, 220px);
+        height: clamp(45px, 12vw, 50px);
+    }
+
+    .about-social {
+        gap: clamp(15px, 2vw, 15px);
+    }
+
+    .about-social a {
+        width: clamp(40px, 10vw, 40px);
+        height: clamp(40px, 10vw, 40px);
+    }
+
+    .skills h2 {
+        font-size: clamp(1.75rem, 4vw, 2rem);
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .header {
+        padding: 20px 10%;
+    }
+
+    .about {
+        padding: 100px 10%;
+    }
+
+    .profile-image {
+        margin-right: 100px;
+    }
+
+    .navbar a {
+        margin-left: 35px;
+    }
+
+    .skills {
+        padding: 50px 0;
+    }
+
+    .skills-container {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .about-content h1 {
+        font-size: clamp(2rem, 5vw, 2rem);
+    }
+
+    .about-content h3 {
+        font-size: clamp(1.25rem, 3.5vw, 1.25rem);
+    }
+
+    .about-content p {
+        font-size: clamp(0.875rem, 2.5vw, 0.875rem);
+    }
+
+    .btn-box a {
+        width: clamp(120px, 35vw, 140px);
+        height: clamp(40px, 12vw, 45px);
+        font-size: clamp(0.875rem, 2.5vw, 0.875rem);
+    }
+
+    .skill {
+        width: clamp(60px, 15vw, 70px);
+        height: clamp(60px, 15vw, 70px);
+    }
+
+    .skill i {
+        font-size: clamp(2.1875rem, 6vw, 2.5rem);
     }
 }
