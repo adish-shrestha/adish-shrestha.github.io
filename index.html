@@ -18,7 +18,7 @@
         <a href="#about" class="active">About</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#message">Leave a Message!</a>
+        <a href="#message">Connect With Me!</a>
     </nav>
 </header>
 
@@ -28,7 +28,7 @@
         <h3>Java Developer & DevOps Engineer</h3>
         <p>Java Springboot and DevOps Engineering</p>
         <div class="btn-box">
-            <a href="#">Leave a Message!</a>
+            <a href="#message">Connect With Me!</a>
         </div>
 
         <div class="about-social">
@@ -88,11 +88,26 @@
     </div>
 </section>
 
-
-<!--<section id="message" class="message">-->
-<!--    <h2>Leave a Message</h2>-->
-<!--    <p>Leave a message..</p>-->
-<!--</section>-->
+<section id="messages" class="messages">
+    <h2>Connect With Me</h2>
+    <form id="messageForm"
+          action="https://script.google.com/macros/s/AKfycbxCwHS8uOC3EEorXyBea-29qONdZ4wNbaeA1xqnIWUQltLzlYQhkCQeKHmdyPlgTfe3lw/exec"
+          method="POST">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" required placeholder="Your Name">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" id="email" name="Email" required placeholder="Your Email">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <input type="text" id="message" name="Message" required placeholder="Your Message">
+        </div>
+        <button type="submit">Send To Adish</button>
+    </form>
+</section>
 </body>
 
 <script>
@@ -103,6 +118,29 @@
         } else {
             header.classList.remove('scrolled');
         }
+    });
+</script>
+
+<script>
+    document.getElementById('messageForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+
+        const formData = new FormData(this);
+        fetch(this.action, {
+            method: 'POST',
+            body: formData
+        }).then(response => response.json())
+            .then(data => {
+                if (data.result === 'success') {
+                    alert('Thank you for your message! I’ll get back to you soon.');
+                    this.reset();
+                } else {
+                    alert('There was an error submitting your message. Please try again.')
+                }
+            }).catch(error => {
+            alert('There was an error submitting your message. Please try again.');
+            console.error('Error:', error);
+        });
     });
 </script>
 
