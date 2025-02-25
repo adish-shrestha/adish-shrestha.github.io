@@ -102,12 +102,15 @@ body {
 .about-content p {
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     margin: clamp(10px, 2vw, 20px) 0;
+    line-height: 1.6;
 }
 
 .btn-box {
     display: flex;
     justify-content: center;
     gap: clamp(5px, 2vw, 10px);
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .btn-box a {
